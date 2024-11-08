@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Order</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<style>
+    .tracking-content{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .side-panel-menu ul li.active a {
+    color: #00A86B; /* Set the desired color */
+}
+</style>
+<body>
+    <!-- Side Panel (same as Order History page) -->
+    <div class="side-panel">
+        <div class="logo">Dressify</div>
+        <h2>Welcome, Ganesh</h2>
+        <div class="side-panel-menu">
+            <ul>
+                <li><a href="./main.html"><i class="fas fa-user"></i> Home</a></li>
+                <li><a href="./your-Design.html"><i class="fas fa-box-open"></i> Your Designs</a></li>
+                <li class="active"><a href="order-history.html"><i class="fas fa-history"></i> Order History</a></li>
+                <li><a href="./Favorite-Designs.html"><i class="fas fa-heart"></i> Favorite Designs</a></li>
+                <li><a href="#"><i class="fas fa-envelope"></i> Messages</a></li>
+                <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                <li class="account-item">
+                    <a href="#"><i class="fas fa-user-circle"></i> Account <i class="fas fa-caret-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Add Account</a></li>
+                        <li><a href="#">Log Out</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Tracking Content -->
+    <div class="tracking-content">
+        <h1>Track Order</h1>
+        <div id="order-info">
+            <!-- JavaScript will populate this with order details -->
+        </div>
+    </div>
+
+    <script>
+        // Extract orderId from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const orderId = urlParams.get('orderId');
+
+        // Mock order data
+        const orderData = {
+            "12345": {
+                name: "Product Name",
+                status: "In Shipment",
+                etaDays: 3,
+                location: "Sorting Facility, CA"
+            }
+        };
+
+        // Display order details based on orderId
+        const orderInfoDiv = document.getElementById("order-info");
+        const order = orderData[orderId];
+
+        if (order) {
+            orderInfoDiv.innerHTML = `
+                <h2>${order.name}</h2>
+                <p>Status: ${order.status}</p>
+                <p>Current Location: ${order.location}</p>
+                <p>Estimated Delivery: ${order.etaDays} days</p>
+            `;
+        } else {
+            orderInfoDiv.innerHTML = "<p>Order not found.</p>";
+        }
+    </script>
+</body>
+</html>
