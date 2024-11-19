@@ -1743,117 +1743,31 @@ button:hover {
     padding-right: 50px;
 }
 
-.hero-animation {
+.how-it-works-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    gap: 20px; /* Adds some space between the text and image */
+}
+
+.text-button {
+    flex: 1;
+    max-width: 50%; /* Keeps the text section from taking up too much space */
+}
+
+.hero-image {
     flex: 1;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+    justify-content: flex-end; /* Align the image to the right */
 }
 
-
-
-/*=======     Cube animation containers      ======*/
-.rainbow-thread-cube, .opposite-rainbow-thread-cube {
-    position: relative;
-    width: 150px;
-    height: 150px;
-    transform: scale(0); /* Start scaled down */
-    animation: openCube 5s infinite ease-in-out;
-}
-
-/* Space between the two cubes */
-.rainbow-thread-cube {
-    margin-right: 50px; /* Space between the two cubes */
-}
-
-/* Horizontal and vertical threads for both rainbow cubes */
-.rainbow-horizontal-thread, .rainbow-vertical-thread,
-.opposite-horizontal-thread, .opposite-vertical-thread {
-    position: absolute;
-    opacity: 0;
-    animation: rainbowThreadMove 5s infinite ease-in-out;
-}
-
-.rainbow-horizontal-thread, .opposite-horizontal-thread {
-    width: 0;
-    height: 4px;
-}
-
-.rainbow-vertical-thread, .opposite-vertical-thread {
-    height: 0;
-    width: 4px;
-}
-
-/* Positioning for first rainbow cube's horizontal threads */
-.rainbow-horizontal-thread:nth-child(1) { top: 0; animation-delay: 0.2s; }
-.rainbow-horizontal-thread:nth-child(2) { top: 33%; animation-delay: 0.4s; }
-.rainbow-horizontal-thread:nth-child(3) { top: 66%; animation-delay: 0.6s; }
-.rainbow-horizontal-thread:nth-child(4) { bottom: 0; animation-delay: 0.8s; }
-
-/* Positioning for first rainbow cube's vertical threads */
-.rainbow-vertical-thread:nth-child(5) { left: 0; animation-delay: 1s; }
-.rainbow-vertical-thread:nth-child(6) { left: 33%; animation-delay: 1.2s; }
-.rainbow-vertical-thread:nth-child(7) { left: 66%; animation-delay: 1.4s; }
-.rainbow-vertical-thread:nth-child(8) { right: 0; animation-delay: 1.6s; }
-
-/* Positioning for second cube's horizontal threads (opposite) */
-.opposite-horizontal-thread:nth-child(1) { top: 0; animation-delay: 0.2s; }
-.opposite-horizontal-thread:nth-child(2) { top: 33%; animation-delay: 0.4s; }
-.opposite-horizontal-thread:nth-child(3) { top: 66%; animation-delay: 0.6s; }
-.opposite-horizontal-thread:nth-child(4) { bottom: 0; animation-delay: 0.8s; }
-
-/* Positioning for second cube's vertical threads (opposite) */
-.opposite-vertical-thread:nth-child(5) { left: 0; animation-delay: 1s; }
-.opposite-vertical-thread:nth-child(6) { left: 33%; animation-delay: 1.2s; }
-.opposite-vertical-thread:nth-child(7) { left: 66%; animation-delay: 1.4s; }
-.opposite-vertical-thread:nth-child(8) { right: 0; animation-delay: 1.6s; }
-
-/* Original rainbow thread animation */
-@keyframes rainbowThreadMove {
-    0%, 100% {
-        width: 0;
-        height: 0;
-        opacity: 0;
-    }
-    20%, 80% {
-        width: 100%;
-        height: 100%;
-        opacity: 1;
-    }
-    30%, 70% { background-color: violet; }
-    40%, 60% { background-color: rgb(103, 240, 24); }
-    50% { background-color: blue; }
-    /* 30%, 70% { background-color: rgb(13, 255, 0); }
-    40%, 60% { background-color: orange; }
-    50% { background-color: yellow; } */
-}
-
-/* Opposite thread animation (reverse color) */
-@keyframes oppositeRainbowThreadMove {
-    0%, 100% {
-        width: 0;
-        height: 0;
-        opacity: 0;
-    }
-    20%, 80% {
-        width: 100%;
-        height: 100%;
-        opacity: 1;
-    }
-    30%, 70% { background-color: rgb(10, 10, 10); }
-    40%, 60% { background-color: rgb(12, 12, 12); }
-    50% { background-color: rgb(9, 9, 9); }
-}
-
-/* Cube scaling effect */
-@keyframes openCube {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(0);
-    }
+.how-it-works-image {
+    margin-top: 90px;
+    width: 100%; /* Make the image stretch to fill its container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Make sure the whole image fits within the container */
+    max-width: 400px; /* Optional: limit the width of the image */
 }
 
 
