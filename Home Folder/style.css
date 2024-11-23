@@ -993,57 +993,88 @@ form input {
     font-size: 2rem;
     margin-bottom: 20px;
 }
-.image-info {
-    position: relative;
-    width: 200px; /* Adjust as necessary */
-    text-align: left;
-    margin: 20px;
-}
-
-.image-info img {
-    width: 100%;
-    border-radius: 5px;
-    transition: transform 0.3s ease; /* Smooth transition effect */
-}
-
-.image-info:hover img {
-    transform: scale(1.1); /* Slightly grow the image on hover */
-}
-
-.image-details {
-    background-color: #f9f9f9;
-    padding: 10px;
-    font-size: 0.9rem;
-    color: #333;
-}
-
-.image-details p {
-    margin: 5px 0;
-}
-
-.profit {
-    color: #29a745;
-    font-weight: bold;
-}
-
-.product-name {
-    font-weight: 600;
-}
-
-.brand, .price, .premium-price, .size {
-    color: #666;
-}
-
-.image-info:hover .image-details {
-    opacity: 1; /* Optionally show the details on hover */
-}
 .Images {
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    height: 100vh;
 }
 
+.image-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px; /* Adjust the height as needed */
+    width: 200px;  /* Set a width for the boxes */
+    border: 2px solid black;
+    gap: 5rem;
+}
+
+.box1, .box2, .box3, .box4, .box5, .box6 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px; /* Adjust the height as needed */
+    width: 200px;  /* Set a width for the boxes */
+    gap: 5rem;
+    transition: 0.3s ease-in-out;
+}
+
+.box1 {
+    background-image: url(./assets/Designer\ 10.jpeg);
+    background-size: cover;
+    background-position: center;
+}
+.box1:hover {
+    width: 30%;
+}
+
+.box2 {
+    background-image: url(./assets/Designer\ 11.jpeg);
+    background-position: center;
+    background-size: cover;
+}
+.box2:hover {
+    width: 30%;
+}
+
+.box3 {
+    background-image: url(./assets/Designer\ 12.jpeg);
+    background-size: cover;
+    background-position: center;
+}
+.box3:hover {
+    width: 30%;
+}
+
+.box4 {
+    background-image: url(./assets/Designer.jpeg);
+    background-size: cover;
+    background-position: center;
+}
+.box4:hover {
+    width: 30%;
+}
+
+/* New Boxes */
+.box5 {
+    background-image: url(./assets/save\ earth\ t-shirt.jpeg);
+    background-size: cover;
+    background-position: center;
+}
+.box5:hover {
+    width: 30%;
+}
+
+.box6 {
+    background-image: url(./assets/Designer\ 8.jpeg);
+    background-size: cover;
+    background-position: center;
+}
+.box6:hover {
+    width: 30%;
+}
 
 
 /* 
