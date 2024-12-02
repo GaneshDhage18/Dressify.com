@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+
+        /* Side Panel */
+.side-panel {
+    /* Side Panel */
+
+    background-color: #24292e;
+    width: 250px;
+    padding: 20px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed; /* This keeps the panel fixed on scroll */
+    top: 0;          /* Position it at the top of the page */
+    left: 0;         /* Align it to the left side */
+    height: 100vh;   /* Make it full height of the viewport */
+    overflow-y: auto; /* Allows scrolling within the panel if content overflows */
+}
+
+
+
+.side-panel .logo {
+    font-size: 2em;
+    font-weight: 600;
+    color: #00A86B;
+    margin-bottom: 30px;
+}
+
+.side-panel h2 {
+    margin: 10px 0;
+    font-size: 1.5em;
+}
+
+.side-panel-menu ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+.side-panel-menu ul li {
+    margin: 20px 0;
+}
+
+.side-panel-menu ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    transition: 0.3s ease-in-out;
+}
+
+.side-panel-menu ul li a:hover {
+    color: #00A86B;
+
+}
+
+.side-panel-menu ul li i {
+    margin-right: 10px;
+}
+
+.account-item ul {
+    display: none;
+    list-style: none;
+    background-color: #1d2226;
+    position: absolute;
+    left: 0;
+    padding: 10px;
+    top: 100%;
+    width: 100%;
+}
+
+
+
+
+        /* Message Page Styling */
+        .message-page {
+            margin-left: 290px;
+            padding: 20px;
+            width: 60%;
+            margin-bottom: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .message-header {
+            display: flex;
+            align-items: center;
+            /* justify-content: space-between; */
+            justify-content: center;
+        }
+
+        .message-header h2 {
+            font-size: 2.5em;
+            color: #24292e;
+        }
+
+        .message-header .icon-btn {
+            color: #555;
+            cursor: pointer;
+            margin-right: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .message-header .icon-btn:hover {
+            color: #00A86B;
+        }
+
+        .message-card {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border: 1px solid #ddd;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+            gap: 15px;
+        }
+
+        .message-card:hover {
+            background-color: #f9f9f9;
+        }
+
+        .message-card input[type="checkbox"] {
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .message-card .message-actions {
+            color: #666;
+            display: flex;
+            gap: 10px;
+        }
+
+        .message-card .message-actions i:hover {
+            color: #00A86B;
+        }
+
+        .message-content {
+            flex-grow: 1;
+        }
+
+        .message-content h3 {
+            margin: 0;
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        .message-content p {
+            margin: 5px 0;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .message-time {
+            font-size: 0.8em;
+            color: #888;
+        }
+
+
+        .side-panel-menu ul li.active a {
+    color: #00A86B; /* Set the desired color */
+}
+    </style>
+</head>
+
+<body>
+    <div class="header-container">
+        <!-- Side Panel -->
+        <div class="side-panel">
+            <div class="logo">Dressify</div>
+            <h2>Welcome, Ganesh</h2>
+            <div class="side-panel-menu">
+                <ul>
+                    <li><a href="./main.html"><i class="fas fa-user"></i> Home</a></li>
+                    <li><a href="./your-Design.html"><i class="fas fa-box-open"></i> Your Designs</a></li>
+                    <li><a href="./Order-history.html"><i class="fas fa-history"></i> Order History</a></li>
+                    <li><a href="./Favorite-Designs.html"><i class="fas fa-heart"></i> Favorite Designs</a></li>
+                    <li class="active"><a href="#"><i class="fas fa-envelope"></i> Messages</a></li>
+                    <li><a href="./setting-page.html"><i class="fas fa-cog"></i> Settings</a></li>
+                    <li class="account-item">
+                        <a href="./Account-page.html"><i class="fas fa-user-circle"></i> Account <i class="fas fa-caret-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Add Account</a></li>
+                            <li><a href="#">Log Out</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Message Page -->
+        <div class="message-page">
+            <div class="message-header">
+                <h2>Inbox</h2>
+            </div>
+
+            <!-- Message Cards -->
+            <div class="message-card">
+                <input type="checkbox">
+                <div class="message-content">
+                    <h3>Order Confirmation</h3>
+                    <p>Your order #12345 has been confirmed!</p>
+                    <span class="message-time">2 hrs ago</span>
+                </div>
+                <div class="message-actions">
+                    <i class="fas fa-trash" title="Delete"></i>
+                    <i class="fas fa-archive" title="Archive"></i>
+                </div>
+            </div>
+
+            <div class="message-card">
+                <input type="checkbox">
+                <div class="message-content">
+                    <h3>Shipping Update</h3>
+                    <p>Your order #12345 is out for delivery.</p>
+                    <span class="message-time">1 day ago</span>
+                </div>
+                <div class="message-actions">
+                    <i class="fas fa-trash" title="Delete"></i>
+                    <i class="fas fa-archive" title="Archive"></i>
+                </div>
+            </div>
+
+            <div class="message-card">
+                <input type="checkbox">
+                <div class="message-content">
+                    <h3>New Design Tips</h3>
+                    <p>Check out our latest design tips to enhance your skills.</p>
+                    <span class="message-time">3 days ago</span>
+                </div>
+                <div class="message-actions">
+                    <i class="fas fa-trash" title="Delete"></i>
+                    <i class="fas fa-archive" title="Archive"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
