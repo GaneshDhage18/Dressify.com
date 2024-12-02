@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Page - Dressify</title>
+    <link rel="stylesheet" href="account.css">
+    <link rel="stylesheet" href="main.css"> <!-- Link to your existing side panel CSS -->
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="header-container">
+        <!-- Include the existing side panel here -->
+
+        <!-- Existing side panel content from your other pages -->
+        <div class="side-panel">
+            <div class="logo">Dressify</div>
+            <h2>Welcome, Ganesh</h2>
+
+            <div class="side-panel-menu">
+                <ul>
+                    <li><a href="./main.html"><i class="fas fa-user"></i> Home</a></li>
+                    <li><a href="./your-Design.html"><i class="fas fa-box-open"></i> Your Designs</a></li>
+                    <li><a href="./Order-history.html"><i class="fas fa-history"></i> Order History</a></li>
+                    <li><a href="./Favorite-Designs.html"><i class="fas fa-heart"></i> Favorite Designs</a></li>
+                    <li><a href="./message-page.html"><i class="fas fa-envelope"></i> Messages</a></li>
+                    <li><a href="./setting-page.html"><i class="fas fa-cog"></i> Settings</a></li>
+                    <li class="active"><a href="#"><i class="fas fa-user-circle"></i> Account <i class="fas fa-caret-down"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="profile-section">
+            <img src="profile-pic.jpg" alt="User Profile" class="profile-pic">
+            <h2>User Name</h2>
+            <button class="edit-profile">Edit Profile</button>
+        </div>
+        <ul class="account-menu">
+            <li><a href="#personal-info"><i class="fas fa-user"></i> Personal Info</a></li>
+            <li><a href="#order-history"><i class="fas fa-box"></i> Order History</a></li>
+            <li><a href="#favorites"><i class="fas fa-heart"></i> Favorites</a></li>
+            <li><a href="#settings"><i class="fas fa-cog"></i> Settings</a></li>
+            <li><a href="#messages"><i class="fas fa-envelope"></i> Messages</a></li>
+            <li><a href="#logout"><i class="fas fa-sign-out-alt"></i> Log Out</a></li>
+        </ul>
+        </aside>
+
+        <!-- Main Account Content -->
+        <div class="account-content">
+            <!-- Personal Info Section -->
+            <section id="personal-info" class="account-section">
+                <h2>Personal Information</h2>
+                <p>Update your name, contact info, and password.</p>
+                <form>
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="Your Name">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Your Email">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" placeholder="Your Phone Number">
+                    <button type="submit" class="save-button">Save Changes</button>
+                </form>
+            </section>
+
+            <!-- Order History Section -->
+            <section id="order-history" class="account-section">
+                <h2>Order History</h2>
+                <p>View and manage your previous orders.</p>
+                <div class="order-card">
+                    <img src="product.jpg" alt="Product" class="order-product-img">
+                    <div class="order-details">
+                        <h3>Product Name</h3>
+                        <p>Status: <span class="status">Shipped</span></p>
+                        <p>Delivery Date: Nov 12, 2024</p>
+                    </div>
+                    <button class="track-order">Track Order</button>
+                </div>
+            </section>
+
+            <!-- Favorites Section -->
+            <section id="favorites" class="account-section">
+                <h2>Favorites</h2>
+                <p>View and manage your favorite items.</p>
+                <div class="favorite-item">
+                    <img src="favorite-item.jpg" alt="Favorite Item" class="favorite-img">
+                    <h3>Item Name</h3>
+                    <button class="remove-favorite"><i class="fas fa-trash"></i> Remove</button>
+                </div>
+            </section>
+
+            <!-- Settings Section -->
+            <section id="settings" class="account-section">
+                <h2>Settings</h2>
+                <p>Manage your account preferences.</p>
+                <button class="settings-option">Notification Preferences</button>
+                <button class="settings-option">Privacy Settings</button>
+                <button id="logout-button" class="logout-option">Log Out</button> <!-- New Logout Button -->
+            </section>
+
+            <!-- Messages Section -->
+            <section id="messages" class="account-section">
+                <h2>Messages</h2>
+                <p>View and respond to your messages.</p>
+                <div class="message-item">
+                    <h3>Message Title</h3>
+                    <p>Message preview text goes here...</p>
+                    <button class="read-more">Read More</button>
+                </div>
+            </section>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById("logout-button").addEventListener("click", function() {
+          // Clear session or local storage if you store user data there
+          localStorage.removeItem("userSession");
+          sessionStorage.removeItem("userSession");
+          
+          // Redirect to the login page
+          window.location.href = "login.html";
+        });
+      </script>
+      
+</body>
+
+</html>
